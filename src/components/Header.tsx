@@ -1,5 +1,5 @@
 import React from 'react';
-import { Crown, Phone } from 'lucide-react';
+import { Crown } from 'lucide-react';
 
 const Header = () => {
   return (
@@ -21,15 +21,9 @@ const Header = () => {
             <a href="/contact" className="text-gray-700 hover:text-blue-600">Contact</a>
           </nav>
 
-          <div className="flex items-center space-x-4">
-            <div className="hidden md:flex items-center">
-              <Phone className="h-5 w-5 text-blue-600" />
-              <span className="ml-2 text-gray-700">24/7: +1 234 567 890</span>
-            </div>
-            <button className="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition-colors">
-              Book Now
-            </button>
-          </div>
+          <button className="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition-colors">
+            Book Now
+          </button>
         </div>
       </div>
     </header>
