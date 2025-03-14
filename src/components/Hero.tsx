@@ -3,7 +3,7 @@ import SearchForm from './SearchForm';
 
 const Hero = () => {
   return (
-    <div className="relative min-h-screen">
+    <div id="booking-form" className="relative min-h-screen">
       {/* Background Image */}
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
