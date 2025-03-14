@@ -14,54 +14,46 @@ const SearchForm = () => {
   };
 
   return (
-    <div className="bg-white p-6 md:p-8 rounded-lg shadow-lg w-full max-w-md md:max-w-xl lg:max-w-2xl">
-      <div className="flex mb-6 bg-gray-100 p-1 rounded-lg">
-        <button
-          className={`flex-1 py-2 text-center rounded-lg transition-colors ${
-            isReturn ? 'bg-blue-600 text-white' : 'text-gray-700'
-          }`}
-          onClick={() => setIsReturn(true)}
-        >
-          With return
-        </button>
-        <button
-          className={`flex-1 py-2 text-center rounded-lg transition-colors ${
-            !isReturn ? 'bg-blue-600 text-white' : 'text-gray-700'
-          }`}
-          onClick={() => setIsReturn(false)}
-        >
-          One Way
-        </button>
-      </div>
-
-      <div className="space-y-4">
-        <div className="relative">
-          <MapPin className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
-          <input
-            type="text"
-            placeholder="From"
-            className="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
-          />
+    <div className="bg-white p-6 md:p-8 rounded-lg shadow-lg w-full">
+      <div className="flex flex-col space-y-6">
+        <div className="flex bg-gray-100 p-1 rounded-lg">
+          <button
+            className={`flex-1 py-2 text-center rounded-lg transition-colors ${
+              isReturn ? 'bg-blue-600 text-white' : 'text-gray-700'
+            }`}
+            onClick={() => setIsReturn(true)}
+          >
+            With return
+          </button>
+          <button
+            className={`flex-1 py-2 text-center rounded-lg transition-colors ${
+              !isReturn ? 'bg-blue-600 text-white' : 'text-gray-700'
+            }`}
+            onClick={() => setIsReturn(false)}
+          >
+            One Way
+          </button>
         </div>
 
-        <div className="relative">
-          <MapPin className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
-          <input
-            type="text"
-            placeholder="To"
-            className="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
-          />
-        </div>
+        <div className="space-y-4">
+          <div className="relative">
+            <MapPin className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
+            <input
+              type="text"
+              placeholder="From"
+              className="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
+            />
+          </div>
 
-        <div className="relative">
-          <Calendar className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
-          <input
-            type="date"
-            className="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
-          />
-        </div>
+          <div className="relative">
+            <MapPin className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
+            <input
+              type="text"
+              placeholder="To"
+              className="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
+            />
+          </div>
 
-        {isReturn && (
           <div className="relative">
             <Calendar className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
             <input
@@ -69,31 +61,41 @@ const SearchForm = () => {
               className="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
             />
           </div>
-        )}
 
-        <div className="relative flex items-center">
-          <Users className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
-          <div className="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-md flex justify-between items-center">
-            <span className="text-gray-700">{passengers} Passenger{passengers !== 1 ? 's' : ''}</span>
-            <div className="flex items-center space-x-2">
-              <button
-                onClick={() => handlePassengerChange(false)}
-                className={`p-1 rounded-full transition-colors ${
-                  passengers > 1 ? 'text-blue-600 hover:bg-blue-50 active:bg-blue-100' : 'text-gray-300'
-                }`}
-                disabled={passengers <= 1}
-              >
-                <Minus className="h-4 w-4" />
-              </button>
-              <button
-                onClick={() => handlePassengerChange(true)}
-                className={`p-1 rounded-full transition-colors ${
-                  passengers < 8 ? 'text-blue-600 hover:bg-blue-50 active:bg-blue-100' : 'text-gray-300'
-                }`}
-                disabled={passengers >= 8}
-              >
-                <Plus className="h-4 w-4" />
-              </button>
+          {isReturn && (
+            <div className="relative">
+              <Calendar className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
+              <input
+                type="date"
+                className="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
+              />
+            </div>
+          )}
+
+          <div className="relative flex items-center">
+            <Users className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
+            <div className="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-md flex justify-between items-center">
+              <span className="text-gray-700">{passengers} Passenger{passengers !== 1 ? 's' : ''}</span>
+              <div className="flex items-center space-x-2">
+                <button
+                  onClick={() => handlePassengerChange(false)}
+                  className={`p-1 rounded-full transition-colors ${
+                    passengers > 1 ? 'text-blue-600 hover:bg-blue-50 active:bg-blue-100' : 'text-gray-300'
+                  }`}
+                  disabled={passengers <= 1}
+                >
+                  <Minus className="h-4 w-4" />
+                </button>
+                <button
+                  onClick={() => handlePassengerChange(true)}
+                  className={`p-1 rounded-full transition-colors ${
+                    passengers < 8 ? 'text-blue-600 hover:bg-blue-50 active:bg-blue-100' : 'text-gray-300'
+                  }`}
+                  disabled={passengers >= 8}
+                >
+                  <Plus className="h-4 w-4" />
+                </button>
+              </div>
             </div>
           </div>
         </div>

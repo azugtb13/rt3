@@ -16,7 +16,7 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16">
-        <div className="grid md:grid-cols-2 gap-8 items-center">
+        <div className="grid md:grid-cols-2 gap-8 md:items-center">
           <div className="text-white">
             <h1 className="text-5xl font-bold mb-4">
               The road is part of the adventure
@@ -26,7 +26,7 @@ const Hero = () => {
             </p>
           </div>
           
-          <div className="md:justify-self-end">
+          <div className="w-full md:max-w-xl lg:max-w-2xl md:justify-self-end">
             <SearchForm />
           </div>
         </div>
