@@ -1,5 +1,6 @@
 import React from 'react';
 import { Crown } from 'lucide-react';
+import { smoothScrollTo } from '../utils/smoothScroll';
 
 const Header = () => {
   const scrollToBooking = () => {
@@ -8,17 +9,9 @@ const Header = () => {
       const isMobile = window.innerWidth < 768;
       const offset = 70; // Adjustable offset in pixels
       
-      const scrollOptions = {
-        behavior: 'smooth',
-        duration: 12500, // Longer duration for more elegant movement
-      };
-      
       // On desktop, scroll to top of the hero section
       if (!isMobile) {
-        window.scrollTo({
-          top: 0,
-          ...scrollOptions
-        });
+        smoothScrollTo(0, 1050); // 2 seconds duration
         return;
       }
 
@@ -26,10 +19,7 @@ const Header = () => {
       const heroText = bookingForm.querySelector('h1');
       if (heroText) {
         const scrollPosition = heroText.getBoundingClientRect().bottom + window.scrollY - offset;
-        window.scrollTo({
-          top: scrollPosition,
-          ...scrollOptions
-        });
+        smoothScrollTo(scrollPosition, 1050); // 2 seconds duration
       }
     }
   };

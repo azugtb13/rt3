@@ -1,4 +1,5 @@
 import React from 'react';
+import { smoothScrollTo } from '../utils/smoothScroll';
 
 const CallToAction = () => {
   const scrollToBooking = () => {
@@ -7,17 +8,9 @@ const CallToAction = () => {
       const isMobile = window.innerWidth < 768;
       const offset = 70; // Adjustable offset in pixels
       
-      const scrollOptions = {
-        behavior: 'smooth',
-        duration: 12500, // Longer duration for more elegant movement
-      };
-      
       // On desktop, scroll to top of the hero section
       if (!isMobile) {
-        window.scrollTo({
-          top: 0,
-          ...scrollOptions
-        });
+        smoothScrollTo(0, 2000); // 2 seconds duration
         return;
       }
 
@@ -25,10 +18,7 @@ const CallToAction = () => {
       const heroText = bookingForm.querySelector('h1');
       if (heroText) {
         const scrollPosition = heroText.getBoundingClientRect().bottom + window.scrollY - offset;
-        window.scrollTo({
-          top: scrollPosition,
-          ...scrollOptions
-        });
+        smoothScrollTo(scrollPosition, 2000); // 2 seconds duration
       }
     }
   };

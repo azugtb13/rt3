@@ -23,7 +23,7 @@ const SearchForm = () => {
             }`}
             onClick={() => setIsReturn(true)}
           >
-            With return
+            Round Trip
           </button>
           <button
             className={`flex-1 py-2 text-center rounded-lg transition-colors ${
@@ -58,7 +58,12 @@ const SearchForm = () => {
             <Calendar className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
             <input
               type="date"
-              className="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
+              className="w-full pl-10 pr-4 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 appearance-none"
+              style={{
+                colorScheme: 'light',
+                WebkitAppearance: 'none',
+                MozAppearance: 'none'
+              }}
             />
           </div>
 
@@ -67,7 +72,12 @@ const SearchForm = () => {
               <Calendar className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
               <input
                 type="date"
-                className="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
+                className="w-full pl-10 pr-4 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 appearance-none"
+                style={{
+                  colorScheme: 'light',
+                  WebkitAppearance: 'none',
+                  MozAppearance: 'none'
+                }}
               />
             </div>
           )}
